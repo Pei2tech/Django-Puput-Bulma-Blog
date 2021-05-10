@@ -1,8 +1,8 @@
 {
-  "name": "django_blog",
-  "version": "0.5.0",
-  "description": "",
-  "main": "blog/index.html",
+  "name": "Django-Puput-Bulma-Demo",
+  "version": "1.0.0",
+  "description": "a Demo program for Puput",
+  "main": "/blog",
   "targets": {
     "main": false
   },
@@ -16,12 +16,9 @@
     "browsers": "> 0.25%"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "bulma": "purgecss --css node_modules/bulma/css/bulma.min.css -con \"blog/templates/** \" -o statics/css",
     "dev:css": "parcel watch --dist-dir statics/puput/css src/puput/css/puput.css",
     "dev:js": "parcel watch --dist-dir statics/puput/js src/puput/js/puput.js",
-    "dev": "concurrently --kill-others  \"npm run dev:css \" \"npm run dev:js \" ",
-    "purge:css": "purgecss --css src/puput/css/puput.css -con \"blog/templates/** \" -o statics/puput/css",
     "build": "parcel build --dist-dir statics/puput --no-source-maps src/puput/css/puput.css src/puput/js/puput.js"
   },
   "babel": {
@@ -44,8 +41,8 @@
     ]
   },
   "keywords": [],
-  "author": "Pei-Tai",
-  "license": "ISC",
+  "author": "pei2tech",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-transform-runtime": "^7.12.1",
