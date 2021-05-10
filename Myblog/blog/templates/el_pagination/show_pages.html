@@ -1,0 +1,3 @@
+{% for page in pages %}
+    {{ page.render_link|default:' <li> <span class="pagination-ellipsis">&hellip;</span> </li>' }}
+{% endfor %}

@@ -1,0 +1,178 @@
+{% load static i18n wagtailcore_tags wagtailimages_tags wagtailroutablepage_tags wagtailuserbar puput_tags %}
+<!DOCTYPE HTML>
+<html lang="zh-Hant-TW">
+<head>
+    <title>
+        {% block title %}
+            {{ blog_page.title }}{% if blog_page.description %} | {{ blog_page.description }}{% endif %}
+        {% endblock title %}
+    </title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="title"
+          content="{% block meta_title %}
+                        {% if blog_page.seo_title %}
+                            {{ blog_page.seo_title }}
+                        {% else %}
+                            {{ blog_page.title }}
+                        {% endif %}
+                   {% endblock meta_title %}"/>
+    <meta name="description"
+          content="{% block meta_description %}
+                        {{ blog_page.search_description }}
+                   {% endblock meta_description %}"/>
+    {% block social_share %}{% endblock social_share %}
+    <link rel="canonical" href="{% block canonical %}{% canonical_url %}{% endblock canonical %}"/>
+
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,300,300italic,100italic,100,400italic,500,500italic,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
+    {% block css %}
+{# below code is used after running "npm run bulma", and the cdn link for bulma should be marked#}
+{#        <link rel='stylesheet' href="{% static 'css/bulma.min.css' %}" type='text/css'/>#}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        <link rel="stylesheet" href="{% static 'puput/css/font-awesome.min.css' %}">
+         {% if blog_page.background_url %}
+             <style>
+                body {
+                    --main-color: {{blog_page.main_color}};
+                    --head-color: {{blog_page.head_color}};
+                    --label-color: {{blog_page.label_color}};
+                    --body-color:;
+                }
+             </style>
+         {% else %}
+            <style>
+                body {
+                    --main-color: {{blog_page.main_color}};
+                    --head-color: {{blog_page.head_color}};
+                    --label-color: {{blog_page.label_color}};
+                    --body-color: {{blog_page.body_color}};
+                }
+            </style>
+         {% endif %}
+        <link rel="stylesheet" href="{% static 'puput/css/puput.css' %}"/>
+    {% endblock %}
+</head>
+
+<body style="background-image: url('{{ blog_page.background_url }}');">
+
+{% block blog_header %}
+
+    <div class="container">
+          <nav class="navbar is-fixed-top set-header" role="navigation" aria-label="main navigation">
+             <div class="container ">
+                 <div class="navbar-brand">
+                     <a class="navbar-item" href="/">
+                       {% if blog_page.header_image %}
+                        {% image blog_page.header_image fill-64x64 as header_image %}
+                            <img alt="{{ blog_page.header_image.title }}" src="{{ header_image.url }}" width="32" height="32">
+                     {% endif %}
+                        <label class="label is-medium ml-3" style="font-size: 32px;color:{{blog_page.label_color}}">{{ blog_page.title }}&nbsp; </label>
+                     </a>
+                     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                        data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                     </a>
+                 </div>
+                 <div id="navbarBasicExample" class="navbar-menu">
+                     <div class="navbar-end">
+                         <div class="navbar-item is-hoverable">
+                             <a href="/"> <i class="fa fa-user"></i>
+                                 <span style="color: {{blog_page.label_color}}">About</span>
+                             </a>
+                         </div>
+                         <a class="navbar-item" href="">
+                             Contact
+                         </a>
+                         <div class="navbar-item">
+                                 <a href="/" class="button is-info">
+                                     Login
+                                 </a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+          </nav>
+{% endblock blog_header %}
+
+
+{% wagtailuserbar %}
+       <section class="hero set-body">
+          <div class="hero-body is-bold">
+              <div class="columns px-5">
+                <div class="column is-8 ">
+                    {% block content %}{% endblock content %}
+                    {% block extra_content %}{% endblock extra_content %}
+                </div>
+                <div class="column is-offset-1 is-3 ">
+                   <div class="container pt-6">
+                    <div class="blog_sidebar">
+                        <div class="rss-sitemap">
+                            <a href="{% feeds_url blog_page %}" target="_blank" title="RSS">
+                                 <i class="fa fa-rss-square"></i> <span>{% trans 'Feed RSS' %}</span>
+                            </a>
+                        </div>
+                        <form name="search_form" class="search_form" method="get" action="{% routablepageurl blog_page 'entries_search' %}">
+                            <div class="field is-grouped">
+                                 <input class="input mr-1" type="search" name="q" placeholder="{% trans 'Search' %}">
+                                 <p class="control input-group-btn">
+                                    <button class="button btn btn-default">
+                                        <span class="icon is-small" type="submit"> <i class="fa fa-search"></i> </span>
+                                    </button>
+                                </p>
+                            </div>
+                        </form>
+                        {% if blog_page.display_last_entries %}
+                            <ul class="sidebar">
+                                <h4>{% trans 'Last Entries' %}</h4>
+                                {% recent_entries blog_page.num_last_entries %}
+                            </ul>
+                        {% endif %}
+                        {% if blog_page.display_popular_entries %}
+                            <ul class="sidebar">
+                                <h4>{% trans 'Popular Entries' %}</h4>
+                                {% popular_entries blog_page.num_popular_entries %}
+                            </ul>
+                        {% endif %}
+                        {% if blog_page.display_categories %}
+                            <ul class="sidebar gocatagory">
+                                <h4>{% trans 'Categories' %}</h4>
+                                {% categories_list %}
+                            </ul>
+                        {% endif %}
+                        {% if blog_page.display_tags %}
+                             <ul class="sidebar ">
+                                <h4>{% trans 'Tags' %}</h4>
+                                  {% tags_list %}
+                            </ul>
+                        {% endif %}
+                        {% if blog_page.display_archive %}
+                            <ul class="sidebar widget menu">
+                                <h4>{% trans 'Archive' %}</h4>
+                                 {% archives_list %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                   </div>
+                </div>
+              </div>
+          </div>
+       </section>
+    </div>
+
+<section class="hero is-small set-footer mt-6">
+  <div class="hero-body">
+    <div class="container has-text-centered ">
+      <h2 class="subtitle has-text-white">
+            Built with Bulma, Puput, Wagtail and Django.
+      </h2>
+    </div>
+  </div>
+</section>
+
+{% block js %}
+    <script src="{% static 'puput/js/puput.js' %}"></script>
+{% endblock js %}
+</body>
+</html>

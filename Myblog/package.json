@@ -1,0 +1,65 @@
+{
+  "name": "django_blog",
+  "version": "0.5.0",
+  "description": "",
+  "main": "blog/index.html",
+  "targets": {
+    "main": false
+  },
+  "browserslist": [
+    "> 0.2%",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=4.x",
+    "electron": ">=2.x",
+    "browsers": "> 0.25%"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bulma": "purgecss --css node_modules/bulma/css/bulma.min.css -con \"blog/templates/** \" -o statics/css",
+    "dev:css": "parcel watch --dist-dir statics/puput/css src/puput/css/puput.css",
+    "dev:js": "parcel watch --dist-dir statics/puput/js src/puput/js/puput.js",
+    "dev": "concurrently --kill-others  \"npm run dev:css \" \"npm run dev:js \" ",
+    "purge:css": "purgecss --css src/puput/css/puput.css -con \"blog/templates/** \" -o statics/puput/css",
+    "build": "parcel build --dist-dir statics/puput --no-source-maps src/puput/css/puput.css src/puput/js/puput.js"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "entry",
+          "targets": {
+            "browsers": "defaults"
+          },
+          "debug": false
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "@babel/transform-runtime"
+      ]
+    ]
+  },
+  "keywords": [],
+  "author": "Pei-Tai",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "cssnano": "^4.1.10",
+    "parcel": "^2.0.0-beta.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.1",
+    "autoprefixer": "^10.0.1",
+    "bulma": "^0.9.2",
+    "bulma-quickview": "^2.0.0",
+    "caniuse-lite": "^1.0.30001148",
+    "core-js": "^3.10.1",
+    "postcss": "^8.1.2",
+    "statics": "^0.1.0"
+  }
+}

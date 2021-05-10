@@ -1,0 +1,32 @@
+{% load i18n wagtailcore_tags wagtailimages_tags puput_tags %}
+
+<div class="columns ">
+    <section class="container features">
+        <p class="title">
+            <span>{% trans 'Related Entries' %}</span>
+        </p>
+        <div class="itemPosts">
+            <div class="columns">
+                {% for related_entry in entry.related|slice:':4' %}
+                    <div class="column is-3">
+                        <section class="box feature">
+                            <div class="image-related">
+                                {% image related_entry.header_image fill-400x240 as header_image %}
+                                <img alt="{{ related_entry.header_image.title }}" src="{{ header_image.url }}">
+                            </div>
+
+                            <h3>
+                                <a href="{% entry_url related_entry blog_page %}">{{ related_entry.title }}</a>
+                            </h3>
+                            <p>
+                                {{ related_entry.excerpt|richtext }}
+                            </p>
+                        </section>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+
+

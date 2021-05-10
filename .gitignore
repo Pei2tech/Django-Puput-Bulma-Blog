@@ -1,0 +1,12 @@
+.venv
+__pycache__
+*.pyc
+.idea
+Myblog/staticfiles
+Myblog/node_modules
+Myblog/blog/migrations
+Myblog/statics/puput/css/*.map
+Myblog/statics/puput/js/*.map
+Myblog/.parcel-cache
+Myblog/db.sqlite3
+package-lock.json
