@@ -5,7 +5,7 @@ This demo program is based on [puput](https://github.com/APSL/puput "puput"), a 
 Technical background
 =================
 - Bulma :  The modern CSS framework.
-- Puput :  The blog app which is based on Wagtal CMS.
+- Puput :  The blog app which is based on Wagtail CMS.
 - Overwritting the templates, html and css of Puput to make a simple and clean blog.
 
 The new in the Wagtail CMS admin page
@@ -42,7 +42,8 @@ Configure Database
 (.venv)...Myblog$python manage.py migrate
 (.venv)...Myblog$python manage.py createsuperuser
 ```
-**please input the user name, email address and password. **
+
+**please input the user name, email address and password.**
 
 Run on local
 =========
