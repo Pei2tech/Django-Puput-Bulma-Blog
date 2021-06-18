@@ -50,7 +50,11 @@ Run on local
 ```
 (.venv)...Myblog$python manage.py runserver
 ```
+
+You will get **Page not found** error as the first time to run `python manage.py runserver` because there is no data in the database.
 Now you can check on the admin page to configure the blog. Just open your browser at  [http://127.0.0.1:8000/cms](http://127.0.0.1:8000/cms).
+
+**Note:** The demo just uses the name *blog* as default homepage, please input the value *blog* as the slug for the **PROMOTE tab** as configuring the blog page. 
 
 You may visit [Wagtail Editor’s guide](https://docs.wagtail.io/en/v2.0/editor_manual/index.html "Wagtail Editor’s guide") for the details about how to use Wagtail editor’s dashboard.
 
