@@ -1,3 +1,4 @@
 Django==3.0.14
 puput
-wagtail-markdown
+wagtail-markdown==0.7.0
+Unidecode==1.2.0

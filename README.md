@@ -28,11 +28,7 @@ $source ./.venv/bin/activate
 ```
 (.venv)...$pip install -r requirements.txt
 ```
-**After packages installed, please upgrade the Markdown package**
-```
-(.venv)...$pip install markdown --upgrade
-```
-**You may get some incompatible messages, please ignore them.**
+
 
 Configure Database
 =========
