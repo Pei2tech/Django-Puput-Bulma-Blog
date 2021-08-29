@@ -68,7 +68,7 @@ ul.sidebar h4 {
     font-size: 16px;
     font-weight: bold;
     color: black;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 ul.sidebar li {
@@ -374,17 +374,18 @@ p {
     margin-top: 1em;
 }
 
-.blog_grid h2 {
-    text-align: center;
-    margin-top: 10px;
+.blog_grid .social-share {
+  list-style: none;
+  padding-left:0;
+  margin-left: 0;
 }
 
 
-.blog_grid .article .social-share li {
+.blog_grid .social-share li {
   float: left;
 }
 
-.blog_grid .article .social-share li.social-item {
+.blog_grid .social-share li.social-item {
   display: inline-block;
   width: 25px;
   height: 25px;
@@ -395,13 +396,13 @@ p {
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
-.blog_grid .article .social-share li.social-item i {
+.blog_grid .social-share li.social-item i {
   color: #fff;
   text-align: center;
   width: 100%;
   margin-top: 6px;
 }
-.blog_grid .article .social-share li.social-item:hover {
+.blog_grid .social-share li.social-item:hover {
   background-color: #333;
 }
 
