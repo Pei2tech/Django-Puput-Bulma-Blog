@@ -16,35 +16,38 @@ The new in the Wagtail CMS admin page
 
 Installation
 ========
-**Clone this repository and make a virtual environment**
+**Clone this repository and go into the directory**
 ```
 $ git clone  https://github.com/Pei2tech/Django-Puput-Bulma-Demo.git myproject
 $ cd myproject
-$ python -m venv .venv
-$source ./.venv/bin/activate
-(.venv)...$
 ```
-**Install dependence packages**
-```
-(.venv)...$pip install -r requirements.txt
-```
+**Install dependence packages**  
 
+```  
+$pip install -r requirements.txt
+```  
+
+for security issue, please use below command to get security key and then update it in the setting.py.  
+
+```  
+$python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+```  
 
 Configure Database
 =========
-```
-(.venv)...$cd Myblog
-(.venv)...Myblog$python manage.py makemigrations
-(.venv)...Myblog$python manage.py migrate
-(.venv)...Myblog$python manage.py createsuperuser
-```
+```   
+$cd Myblog
+...Myblog$python manage.py makemigrations
+...Myblog$python manage.py migrate
+...Myblog$python manage.py createsuperuser
+```    
 
 **please input the user name, email address and password.**
 
 Run on local
 =========
 ```
-(.venv)...Myblog$python manage.py runserver
+..Myblog$python manage.py runserver
 ```
 
 You will get **Page not found** error as the first time to run `python manage.py runserver` because there is no data in the database.
