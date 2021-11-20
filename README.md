@@ -21,7 +21,7 @@ Installation
 $ git clone  https://github.com/Pei2tech/Django-Puput-Bulma-Demo.git myproject
 $ cd myproject
 ```
-**Install dependence packages**  
+**Install dependence packages**  (ps: it is recommended to use the virtual environment)  
 
 ```  
 $pip install -r requirements.txt
