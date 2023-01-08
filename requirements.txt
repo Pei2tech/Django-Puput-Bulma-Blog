@@ -1,4 +1,5 @@
-Django==3.0.14
-puput
-wagtail-markdown==0.7.0
+Django==3.2.16
+pytz==2020.1
+puput==1.2.0
+wagtail-markdown==0.10.0
 Unidecode==1.2.0

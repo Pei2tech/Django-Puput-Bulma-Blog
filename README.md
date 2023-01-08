@@ -8,7 +8,7 @@ Technical background
 - Puput :  The blog app which is based on Wagtail CMS.
 - Overwritting the templates, html and css of Puput to make a simple and clean blog.
 
-The new in the Wagtail CMS admin page
+The new in the Wagtail CMS admin page for Puput
 ==========
 - Easily configure the color of  label, head and  body without modiying code.
 - Support background image
@@ -55,7 +55,7 @@ Now you can check on the admin page to configure the blog. Just open your browse
 
 **Note:** The demo just uses the name *blog* as the default homepage, please input the value *blog* for the slug in the **PROMOTE tab** as configuring the blog page. 
 
-You may visit [Wagtail Editor’s guide](https://docs.wagtail.io/en/v2.0/editor_manual/index.html "Wagtail Editor’s guide") for the details about how to use Wagtail editor’s dashboard.
+You may visit [Wagtail Editor’s guide](https://docs.wagtail.io/en/stable/editor_manual/index.html "Wagtail Editor’s guide") for the details about how to use Wagtail editor’s dashboard.
 
 Screenshot
 =========
@@ -65,4 +65,4 @@ Screenshot
 Example site
 =============
 
-Example Site (traditional chinese): [IPATRANS](https://trans.cmssds.org/bulletin)
+Example Site (traditional chinese): [TRANS](https://trans.cmssds.org/bulletin)

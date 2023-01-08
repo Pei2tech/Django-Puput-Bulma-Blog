@@ -159,6 +159,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_ROOT = 'staticfiles'
 
+WAGTAILADMIN_BASE_URL = ''
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 WAGTAIL_SITE_NAME = 'Blog'

@@ -35,7 +35,7 @@ class MarkdownEntryAbstract(EntryAbstract):
         MultiFieldPanel(
             [
                 FieldPanel('title', classname="title"),
-                ImageChooserPanel('header_image'),
+                FieldPanel('header_image'),
                 FieldPanel('video_url'),
                 MarkdownPanel('body', classname="full"),
                 FieldPanel('excerpt', classname="full"),
