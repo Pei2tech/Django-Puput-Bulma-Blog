@@ -65,4 +65,4 @@ Screenshot
 Example site
 =============
 
-Example Site (traditional chinese): [IPATRANS](https://demo.cmssds.org/bulletin)
+Example Site (traditional chinese): [IPATRANS](https://trans.cmssds.org/bulletin)
