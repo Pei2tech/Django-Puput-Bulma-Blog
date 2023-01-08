@@ -56,8 +56,8 @@
 {#                {% include 'puput/entry_page_header.html' %}#}
                 <section>
                     {% if entry.header_image %}
-                        <figur class="image is-480x320 is-flex is-justify-content-center">
-                            {% image entry.header_image fill-480x240 as header_image %}
+                        <figur class="image is-3by2 is-flex is-justify-content-center">
+                            {% image entry.header_image fill-640x320 as header_image %}
                             <img alt="{{ entry.header_image.title }}" src="{{ header_image.url }}">
                         </figur>
                     {% endif %}
