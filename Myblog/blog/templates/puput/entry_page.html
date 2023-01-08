@@ -48,7 +48,7 @@
            {% if self.id %}data-entry-page-update-comments-url="{% url 'entry_page_update_comments' self.id %}{% endif %}">
         <section>
             {% if self.header_image %}
-                <figur class="image is-3by2 is-flex is-justify-content-center">
+                <figur class="image mt-4 is-3by2 is-flex is-justify-content-center">
                     {% image self.header_image fill-640x320 as header_image %}
                     <img alt="{{ self.header_image.title }}" src="{{ header_image.url }}">
                 </figur>
