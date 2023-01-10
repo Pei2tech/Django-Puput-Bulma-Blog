@@ -1,6 +1,6 @@
 Introduction
 ===========
-This demo program is based on [puput](https://github.com/APSL/puput "puput"), a Django app,  to handle the blog. It also uses the [bulma](https://bulma.io/ "bulma") and Vanilla Javascript to replace the bootstrap4 and jquery that puput used for frondend. In order to support markdown, the package, [wagtail-markdown](https://github.com/torchbox/wagtail-markdown "wagtail-markdown"), should be installed.   
+This program is based on [puput](https://github.com/APSL/puput "puput"), a Django app,  to handle the blog. It also uses the [bulma](https://bulma.io/ "bulma") and Vanilla Javascript to replace the bootstrap4 and jquery that puput used for frondend. In order to support markdown, the package, [wagtail-markdown](https://github.com/torchbox/wagtail-markdown "wagtail-markdown"), should be installed.   
 
 Technical background
 =================
@@ -12,6 +12,7 @@ The new in the Wagtail CMS admin page for Puput
 ==========
 - Easily configure the color of  label, head and  body without modiying code.
 - Support background image
+- Support youtube link as a page title.
 - Support markdown in the body. 
 
 Installation
