@@ -19,7 +19,7 @@ Installation
 ========
 **Clone this repository and go into the directory**
 ```
-$ git clone  https://github.com/Pei2tech/Django-Puput-Bulma-Demo.git myproject
+$ git clone  https://github.com/Pei2tech/Django-Puput-Bulma-Blog.git myproject
 $ cd myproject
 ```
 **Install dependence packages**  (ps: it is recommended to use the virtual environment)  
