@@ -67,31 +67,33 @@ Example site
 
 Example Site (traditional chinese): [TRANS](https://trans.cmssds.org/bulletin)
 
+   
 
 Modification theme
 ==================
 
-Update below files can change the theme.
+You can modify below files to change the theme.   
 
-Templates: blog/templates/puput/*.html 
-css: src/puput/*.css 
-js: src/puput/*.js
+Template files: blog/templates/puput/*.html       
+css files: src/puput/*.css      
+js files: src/puput/*.js    
 
-Install the node dependencies  
+     
+**Install the node dependencies**         
 
 ```
 ..Myblog$npm install
 
 ```
 
-Run debug mode   
+**Run debug mode**      
 
 ```  
 ..Myblog$npm run dev  
 
 ```  
 
-Run production mode  
+**Run production mode**     
 
 ```   
 ..Myblog$npm run build  
