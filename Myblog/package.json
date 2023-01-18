@@ -1,7 +1,7 @@
 {
-  "name": "Django-Puput-Bulma-Demo",
+  "name": "Django-Puput-Bulma-Blog",
   "version": "1.0.0",
-  "description": "a Demo program for Puput",
+  "description": "a blog program using Puput",
   "main": "/blog",
   "targets": {
     "main": false
@@ -16,10 +16,10 @@
     "browsers": "> 0.25%"
   },
   "scripts": {
-    "bulma": "purgecss --css node_modules/bulma/css/bulma.min.css -con \"blog/templates/** \" -o statics/css",
-    "dev:css": "parcel watch --dist-dir statics/puput/css src/puput/css/puput.css",
-    "dev:js": "parcel watch --dist-dir statics/puput/js src/puput/js/puput.js",
-    "build": "parcel build --dist-dir statics/puput --no-source-maps src/puput/css/puput.css src/puput/js/puput.js"
+    "dev:css": "parcel watch -d statics/puput/css src/puput/css/puput.css",
+    "dev:js": "parcel watch -d statics/puput/js src/puput/js/puput.js",
+    "dev": "concurrently --kill-others \"npm run dev:css \" \"npm run dev:js \" ",
+    "build": "parcel build -d statics/puput --no-source-maps src/puput/css/puput.css src/puput/js/puput.js"
   },
   "babel": {
     "presets": [
@@ -47,7 +47,8 @@
     "@babel/core": "^7.12.3",
     "@babel/plugin-transform-runtime": "^7.12.1",
     "cssnano": "^4.1.10",
-    "parcel": "^2.0.0-beta.2"
+    "concurrently": "^5.3.0",
+    "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
     "@babel/runtime": "^7.12.1",

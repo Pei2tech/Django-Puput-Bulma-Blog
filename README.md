@@ -52,11 +52,10 @@ Run on local
 ```
 
 You will get **Page not found** error as the first time to run `python manage.py runserver` because there is no data in the database.
-Now you can check on the admin page to configure the blog. Just open your browser at  [http://127.0.0.1:8000/cms](http://127.0.0.1:8000/cms).
+Now you can check on the admin page to configure the blog. Just open your browser at  [http://127.0.0.1:8000/cms](http://127.0.0.1:8000/cms), and then login the username and password to enter the wagtail admin page.
+After going into the wagtail site page, please click the page icon to create one page for the default homepage. **Note**, the program just uses the name **blog** as the default homepage, please input the value **blog** for the slug in the **Promote tab** as configuring the blog page. 
 
-**Note:** The demo just uses the name *blog* as the default homepage, please input the value *blog* for the slug in the **PROMOTE tab** as configuring the blog page. 
-
-You may visit [Wagtail Editor’s guide](https://docs.wagtail.io/en/stable/editor_manual/index.html "Wagtail Editor’s guide") for the details about how to use Wagtail editor’s dashboard.
+You may visit [Wagtail Editor’s guide](https://guide.wagtail.org/en-latest/) for the details about how to use Wagtail editor’s dashboard.
 
 Screenshot
 =========
@@ -67,3 +66,36 @@ Example site
 =============
 
 Example Site (traditional chinese): [TRANS](https://trans.cmssds.org/bulletin)
+
+
+Modification theme
+==================
+
+Update below files can change the theme.
+
+Templates: blog/templates/puput/*.html 
+css: src/puput/*.css 
+js: src/puput/*.js
+
+Install the node dependencies  
+
+```
+..Myblog$npm install
+
+```
+
+Run debug mode   
+
+```  
+..Myblog$npm run dev  
+
+```  
+
+Run production mode  
+
+```   
+..Myblog$npm run build  
+
+``` 
+
+  
