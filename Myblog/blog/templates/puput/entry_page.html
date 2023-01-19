@@ -49,7 +49,7 @@
         <section>
             {% if self.header_image %}
                 <figur class="image mt-4 is-3by2 is-flex is-justify-content-center">
-                    {% image self.header_image fill-640x320 as header_image %}
+                    {% image self.header_image fill-640x480 as header_image %}
                     <img alt="{{ self.header_image.title }}" src="{{ header_image.url }}">
                 </figur>
             {% endif %}

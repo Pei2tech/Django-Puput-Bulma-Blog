@@ -56,17 +56,17 @@
 {#                {% include 'puput/entry_page_header.html' %}#}
                 <section>
                     {% if entry.header_image %}
-                        <figur class="image is-3by2 is-flex is-justify-content-center">
-                            {% image entry.header_image fill-640x320 as header_image %}
+                        <figur class="image is-flex is-justify-content-center">
+                            {% image entry.header_image scale-50 as header_image %}
                             <img alt="{{ entry.header_image.title }}" src="{{ header_image.url }}">
                         </figur>
                     {% endif %}
 
-                    {% if entry.video_url %}
-                         <figure class="image is-480x320 is-flex is-justify-content-center">
-                          <iframe class="has-ratio" width="480" height="320" src={{ entry.video_url }}? frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                         </figure>
-                    {% endif %}
+{#                    {% if entry.video_url %}#}
+{#                         <figure class="image is-480x320 is-flex is-justify-content-center">#}
+{#                          <iframe class="has-ratio" width="480" height="320" src={{ entry.video_url }}? frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>#}
+{#                         </figure>#}
+{#                    {% endif %}#}
                     {% include 'puput/entry_page_header.html' %}
                     {% include 'puput/entry_links.html' %}
                 </section>

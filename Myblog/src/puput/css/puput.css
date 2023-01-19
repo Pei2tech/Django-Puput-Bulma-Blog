@@ -705,3 +705,8 @@ ul.box.seperateline h4 {
 
 }
 
+@media screen and (max-width: 1087px) {
+  .navbar-menu {
+    background-color: var(--head-color);
+  }
+}
